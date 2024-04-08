@@ -2,7 +2,7 @@
 
 
 <a href='https://arxiv.org/abs/2404.04095'><img src='https://img.shields.io/badge/ArXiv-2404.04095-red'></a> 
-
+[![GitHub](https://img.shields.io/github/stars/Mowenyii/PAE?style=social)](https://github.com/Mowenyii/PAE)
 
 ##  Abstract
 
