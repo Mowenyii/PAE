@@ -189,7 +189,7 @@ class TransformerDecoder(nn.Module):
         self.cfg = cfg
         self.token_embedding_layer = nn.Embedding(
             cfg.vocab_size, cfg.embedding_dim)  # (Vocab, d)
-        self.postion_embedding_layer = nn.Embedding(cfg.block_size,
+        self.position_embedding_layer = nn.Embedding(cfg.block_size,
                                                     cfg.embedding_dim)
         self.input_dropout = nn.Dropout(cfg.dropout_rate)
         self.decoder_blocks = nn.ModuleList(
@@ -205,7 +205,7 @@ class TransformerDecoder(nn.Module):
         pos = torch.arange(0 , T , dtype=torch.long,
                                device=x.device).unsqueeze(0)
 
-        pos_embeddings = self.postion_embedding_layer(pos)  # (B, T, d)
+        pos_embeddings = self.position_embedding_layer(pos)  # (B, T, d)
 
         x = self.input_dropout(token_embeddings + pos_embeddings)
 
@@ -229,7 +229,7 @@ class TransformerDecoder_add_token(nn.Module):
         self.cfg = cfg
         self.token_embedding_layer = nn.Embedding(
             cfg.vocab_size, cfg.embedding_dim)  # (Vocab, d)
-        self.postion_embedding_layer = nn.Embedding(cfg.block_size,
+        self.position_embedding_layer = nn.Embedding(cfg.block_size,
                                                     cfg.embedding_dim)
         self.input_dropout = nn.Dropout(cfg.dropout_rate)
         self.decoder_blocks = nn.ModuleList(
@@ -254,7 +254,7 @@ class TransformerDecoder_add_token(nn.Module):
         pos = torch.arange(0 , T , dtype=torch.long,
                                device=x.device).unsqueeze(0)
 
-        pos_embeddings = self.postion_embedding_layer(pos)  # (B, T, d)
+        pos_embeddings = self.position_embedding_layer(pos)  # (B, T, d)
 
         x = self.input_dropout(token_embeddings + pos_embeddings) 
 
@@ -326,7 +326,7 @@ class GPT(nn.Module):
         def convert_state_key(k):
             huggingface_names = {
                 "token_embedding_layer": "wte",
-                "postion_embedding_layer": "wpe",
+                "position_embedding_layer": "wpe",
                 "decoder_blocks": "h",
                 "mmsa": "attn",
                 "ln1": "ln_1",
@@ -731,7 +731,7 @@ class GPTActor(nn.Module):
         def convert_state_key(k):
             huggingface_names = {
                 "token_embedding_layer": "wte",
-                "postion_embedding_layer": "wpe",
+                "position_embedding_layer": "wpe",
                 "decoder_blocks": "h",
                 "mmsa": "attn",
                 "ln1": "ln_1",
