@@ -219,13 +219,12 @@ python evaluate.py --card 0 --data "coco" --save "save/coco/" --ckpt "ckpt/PAE/a
 ## 📍 Citation 
 
 ```
-@misc{mo2024dynamic,
-      title={Dynamic Prompt Optimizing for Text-to-Image Generation}, 
-      author={Wenyi Mo and Tianyu Zhang and Yalong Bai and Bing Su and Ji-Rong Wen and Qing Yang},
-      year={2024},
-      eprint={2404.04095},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
+@inproceedings{mo2024dynamic,
+  title={Dynamic Prompt Optimizing for Text-to-Image Generation},
+  author={Mo, Wenyi and Zhang, Tianyu and Bai, Yalong and Su, Bing and Wen, Ji-Rong and Yang, Qing},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={26627--26636},
+  year={2024}
 }
 ``` 
 
